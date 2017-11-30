@@ -1,0 +1,138 @@
+*{
+			margin: 0;
+			padding: 0;
+		}
+		p::first-line{
+			color: orange;
+		}
+		p{
+			font-family: 'Dancing Script', cursive;
+			font-size: 18px;
+		}
+		body{
+			background-color: #ff66a3;
+		}
+		.wapper{
+			width: 100%;
+			margin: auto;
+			height: auto;
+		}
+		.menu_left{
+			float: left;
+			height: auto;
+			min-height: 700px;
+			width: 20%;
+			background-color: #a06c59;
+		}
+		.right{
+			float: right;
+			width: 80%;	
+		}
+		ul{
+			list-style-type: none;
+		}
+		.menu_left ul li{
+			padding-left: 20px; 
+			padding: 10px 10px 10px ;
+			font-size: 20px;
+			line-height: 20px;
+			border-bottom: white 1px solid;
+			
+		}
+		.menu_left ul li:hover{
+			background-color: #e8e5e5;
+		}
+		.header{
+			background-color: #947172;
+			
+		}
+		.header >ul{
+			margin-left: 40px;
+			text-align: center;	
+		}
+		.header ul li {
+			
+			margin-left: -4px;		
+			color:white;
+			display: inline-block;
+			min-width: 140px;
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+		}
+		.header ul li a{
+			color:white;
+			text-decoration: none;
+			display: block;
+		}
+		.header ul li a:hover{
+			color: black;
+			background-color: #e8e5e5;
+		}
+		
+		.header ul li >.sub-menu{
+			background-color: #947172;
+			display: none;
+			position: absolute;	
+		}
+		.header ul li >.sub-menu li{
+			margin-left: 0;
+		}
+		
+		.header ul li:hover >.sub-menu{
+			display: block;
+		}
+		.banner{
+			text-align: center;
+			border: 10px solid transparent;
+		    padding: 15px;
+		    -webkit-border-image: url(border.png) 20% round; /* Safari 3.1-5 */
+		    -o-border-image: url(border.png) 20% round; /* Opera 11-12.1 */
+		    border-image: url(border.png) 20% round;
+			height: 150px;
+			background-color: #b9b9b2b5;
+
+		}
+		a.swapimage img{
+			display: block;
+			height: 100px;
+		}
+		#image1{
+			display: none;
+		}
+		a.swapimage:hover #image1{
+			display: block;
+		}
+		a.swapimage:hover #image2{
+			display: none;
+		}
+		.banner h3{
+			margin-top: 10px;
+		}
+		.content{
+			width: 100%;
+		}
+		#table-content{
+			margin: 30px  100px;
+		}
+		#table-content h3{
+			font-family: 'Atomic Age', cursive;
+			font-family: 'Fjalla One', sans-serif;
+			text-align: left;	
+			margin-bottom: 5px;
+			margin-left: 20px;
+			margin-right: 10px;
+		}
+		.item-content{
+			margin:20px;
+			width: 250px;
+		}
+		.item-content img{
+			margin-right: 20px;
+		}
+		.footer{
+			border-top: 1px #ccbfbf solid;
+			height: auto;
+			text-align: center;
+			padding-top: 10px;
+		}

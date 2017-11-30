@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>JavaScript can validate input</h1>
+	<p>input a number between 1 and 10</p>
+	<input id="number">
+	<button type="button" onclick="myfnc">submit</button>
+	<p id="demo"></p>
+	
+	<script type="text/javascript">
+		function myfnc(x) {
+			var x, text;
+			
+			x = document.getById("number").value;
+			if(isNaN(x) || x<1 | x>10){
+				text="error"
+			}
+			else{
+				text="ok";
+			}
+			document.getById("demo").innerHTML=text;
+		}
+	</script>
+</body>
+</html>

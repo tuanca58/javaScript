@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="cssForm.css">
+</head>
+<body onload="checkCookie()">
+	<form action=""  name="form_name"  onsubmit="return setCookie()">
+		First name:<br> 
+		<input type="text" name="firstname" id="first_name"> 
+		<input type="checkbox" >
+		<input class="anh" type="file" accept="image/*" onchange="loadFile(event)" >
+		<div>
+			<img id="output" width="100px" height="100px" />
+		</div>
+		Last name:<br>
+		<input type="text" name="lastname" id="last_name"><br>
+		Phone number:<br> 
+		(<input type="text" style="width: 60px;" name="a">)
+		<input type="text" style="width: 60px;" name="b">
+		<input type="text" style="width: 60px;" name="c"><br> 
+		<input type="radio" name="gender">Male<br> 
+		<input type="radio" name="gender">Female<br>
+		<textarea rows="10" cols="70"></textarea><br>
+		<input type="checkbox"">By Bike<br>
+		<input type="checkbox">By Car<br>
+		<select style="width: 515px;">
+			<option>meta</option>
+			<option>nano</option>
+		</select><br> 
+		<input id="Submit" type="submit" value="submit" >
+	</form>
+
+	<script type="text/javascript">
+		var loadFile = function(event) {
+			var reader = new FileReader();
+			reader.onload = function() {
+				var output = document.getElementById('output');
+				output.src = reader.result;
+			};
+			reader.readAsDataURL(event.target.files[0]);
+		};
+	
+		var firstName;  //first name
+		var lastName; //last name
+		function getFirstName() {
+			return document.getElementById("first_name").value;
+		}
+		function getLastName() {
+			return document.getElementById("last_name").value;
+		}
+		
+		
+		function display() {
+			firstName = getFirstName();
+			lastName = getLastName();
+			window.alert(firstName + lastName);
+			return true;
+			//document.getElementById("form").submit();
+		}
+		
+		function a(){
+			alert("aa");
+			return true;
+		}
+		function validPhone() { 
+			alert("alid");
+			var phNum = document.form_name.a.value + document.form_name.b.value + document.form_name.c.value; 
+			// Check for numbers only 
+			for (i = 0; i < phNum.length; i++) { 
+				if (phNum.charAt(i) < "0" || phNum.charAt(i) > "9") { 
+					alert("Please enter only numbers.");
+					return false; 
+					} 
+				}
+			// Check for 10 digits 
+			if (phNum.length < 10) {
+				alert("Please enter your 10-digit phone number."); 
+				return false; 
+				}
+			return true;
+		}
+		
+		function setCookie(cname, cvalue, exdays) {
+		    var d = new Date();
+		    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		    var expires = "expires="+d.toUTCString();
+		    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+
+		function getCookie(cname) {
+		    var name = cname + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i = 0; i < ca.length; i++) {
+		        var c = ca[i];
+		        while (c.charAt(0) == ' ') {
+		            c = c.substring(1);
+		        }
+		        if (c.indexOf(name) == 0) {
+		            return c.substring(name.length, c.length);
+		        }
+		    }
+		    return "";
+		}
+
+		function checkCookie() {
+		    var user = getCookie("username");
+		    if (user != "") {
+		        alert("Welcome again " + user);
+		    } else {
+		        user = prompt("Please enter your name:", "");
+		        if (user != "" && user != null) {
+		            setCookie("username", user, 365);
+		        }
+		    }
+		}
+	</script>
+
+
+</body>
+</html>

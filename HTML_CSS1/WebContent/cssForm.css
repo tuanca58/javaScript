@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+body{
+	margin-top: 50px;
+	margin-left: 400px;
+	margin-right: 450px;
+}
+
+.anh{
+	float: right;
+}
+
+#output{
+	float: right;
+}
